@@ -31,7 +31,7 @@ public class FindMinimum {
        while (sc.hasNextInt()) {
             numsList.add(sc.nextInt());
        }
-
+       // sanity check
        if (numsList.size() == 0) {
          System.out.println("You didn't enter any integer numbers, try again\n");
          requestUserInput();
