@@ -1,6 +1,6 @@
 # Practice
 
-## Task 2: Search for an element in the array. 
+## Task 2: Search for an element in the array
 
 Take 2 integer numbers from the console: 
 
