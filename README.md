@@ -1,5 +1,19 @@
 # Practice
 
+## Task 1: Sorting 
+
+Sort random array of integer numbers using 2 of the following sort algorithms: 
+
+- bubble sort
+- optimized bubble sort 
+- insertion sort 
+- selection sort
+
+---
+Note: I've implemented all of the above algorithms
+
+See the solution - [ArraySort.java](ArraySort.java)
+
 ## Task 2: Search for an element in the array
 
 Take 2 integer numbers from the console: 
@@ -14,10 +28,17 @@ Use several search algorithms. For example:
 - regular search one by one;
 - binary search 
 
-Compare exection time.
+Compare execution time.
 
 ---
-See the solution (partially implemented at the moment) - [ArraySearch.java](ArraySearch.java)
+See the solution - [ArraySearch.java](ArraySearch.java)
+
+## Task 3: Count element occurrences in a String
+
+Your program should request an input of 1 symbol form the consoles and count a number occurrences of this symbol in a pre-created text and print it to the console. The text may be hard-coded as a String in your code or stored in .txt file
+
+---
+See the solution - [CountOccurences.java](CountOccurences.java)
 
 ## Task 4: Find Minimum
 
