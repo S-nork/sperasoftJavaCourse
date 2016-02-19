@@ -50,3 +50,14 @@ Create a class `FindMinimum` with the following methods:
 
 ---
 See the solution - [FindMinimum.java](FindMinimum.java)
+
+## Task 5: Tower of Hanoi 
+
+There are 3 sticks "A", "B", "C". On the "A" stick there are "n" (this number should be taken from the console) disks, represented by integers from 1 to N (where 1 is the smallest and n is the biggest). You should move the tower from "A" to "C" following the rule that each disk may be only put on the bigger disk (n can only be lowest, 1 can be putted on any disk) 
+
+Create a program that will take the number of disks and print the steps required to move the tower to the "C" stick (example: "1 moved from A to C").  
+
+Use recursive method. 
+
+---
+See the solution - [HanoiTower.class](HanoiTower.class)
