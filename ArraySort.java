@@ -1,3 +1,5 @@
+// лучше не использовать дефолтный рackage
+
 import java.lang.System;
 import java.util.Scanner;
 import java.util.Random;
@@ -16,6 +18,7 @@ public class ArraySort {
       System.out.println("\nGenerated Array: \n" + java.util.Arrays.toString(generatedArray));
   }
 
+  // так как метод используется повторно в других классах, лучше выносить в отдельный сервис, который будет генерировать массив
   private int[] generateRandomArrayOfInt(int size) {
       int[] resultingArray = new int[size];
 
@@ -28,6 +31,7 @@ public class ArraySort {
       return resultingArray;
   }
 
+  //то же самое, лучше выносить в отдельный класс
   private static int requestUserInput(String msg) {
        int n = 0;
        Scanner sc = new Scanner(System.in);
@@ -41,6 +45,11 @@ public class ArraySort {
        return n;
   }
 
+  // 1. стараться избегать статических методов тем более, что в методе main создается объект класса ArraySort
+  // можно обойтись методами объекта (Instance method)
+  // 2. так как аргументы передатся в метод по значению (pass by value), для ссылочных типов (все что не примтивы), это значит 
+  // по значению ссылки (pass by reference), не обязательно делать метод int[], можно оставить void. Тем более внутри метода
+  // ты не создаешь копии массива, а редактируешь тот, который передал
   public static int[] selectionSort(int[] unsortedArray) {
        int iMin; // index of the minimum element in the array
        for (int i = 0; i < unsortedArray.length - 1; i++) {
@@ -105,7 +114,7 @@ public class ArraySort {
       } // for(i)
       return unsortedArray; // the array is sorted at this point
   }
-
+// стоит выносить повторяющие методы в отдельный класс
   public static long elapsedTime(long startTime, long stopTime) {
     return stopTime - startTime;
   }
@@ -123,6 +132,11 @@ public class ArraySort {
     long startTime = System.nanoTime();
     System.out.println("\nSorted Array (Selection Sort): \n" 
         + java.util.Arrays.toString(arrSort.selectionSort(arrSort.generatedArray)) + "\n");
+		
+		// в случае статичных методов не стоит обращаться к ним через экземпляр класса (instance), как в строчке выше.
+		// лучше через класс ArraySort.selectionSort
+		// но в текущей реализации, я бы посоветовала использовать нестатичные методы и в целом создавать отдельный класс для // каждой сортирови, чтобы увеличить связность класса (cohesion - один из принципов проектировани. каждый класс 
+		// должен выполнять только 1 задачу)
     long stopTime = System.nanoTime();
     System.out.print("Execution time of Selection Sort (nanoseconds): " + elapsedTime(startTime, stopTime) + "\n");
 

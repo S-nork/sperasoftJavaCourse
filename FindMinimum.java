@@ -5,12 +5,17 @@ import java.util.ArrayList;
 public class FindMinimum {
   
   private ArrayList<Integer> numsList = new ArrayList<Integer>();
-
+// избегай статичных методов
+// основная идея задачи была написать методы
+// findMin(int first, int second)
+// findMin(int first, int second, int third)
+// и реализовать их друг через друга (основы overload)
+// круто, что использовал varargs (зря только в Integer сконвертил лишние операции)
   public static int findMin(Integer ... nums) {
-      int min = nums[0];
+      int min = nums[0]; // вот тут unboxing (автоматическая операция по конвертации объекту Integer в примитив int)
       for(int i = 0; i < nums.length; i++) {
-          if (min > nums[i]) {
-            min = nums[i];
+          if (min > nums[i] // здесь тоже) {
+            min = nums[i]// и тут :);
           }
       }
       return min;
